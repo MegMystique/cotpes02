@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'find_cat/css/style.css' %}" />
+</head>
+<body>
+<h1>{{ pet.name }}</h1>
+<ul>
+
+    <li>{{ pet.type_animal }}</li>
+    <li>{{ pet.sex}}</li>
+    <li>{{ pet.age }}</li>
+    <li>{{ pet.color }}</li>
+    <li>{{ pet.sterilized }}</li>
+    <li>{{ pet.accustomed }}</li>
+
+
+
+</ul>
+{% for photo in all_photo_pet %}
+
+  <img src="{% static 'find_cat/img/'%}{{ photo }}">
+
+{% endfor %}
+</body>
+</html>
