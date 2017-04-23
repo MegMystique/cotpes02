@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.conf.urls import include, url
 from django.contrib import admin
+from find_cat import views
 
 
 urlpatterns = [
+    url(r'^$', views.BaseIndexView.as_view(), name='index'),
     url(r'^find_cat/', include('find_cat.urls')),
     url(r'^admin/', admin.site.urls),
 

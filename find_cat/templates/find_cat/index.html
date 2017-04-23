@@ -1,11 +1,15 @@
+{% extends "find_cat/base_generic.html" %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'find_cat/css/style.css' %}" />
-{% if all_pet_list %}
+
+
+{% block content %}
+{% if all_ad_list %}
     <ul>
-    {% for pet in all_pet_list %}
-        <li><a href="/find_cat/{{ pet.id }}/">{{ pet.name}},{{pet.type_animal }}</a></li>
+    {% for ad in all_ad_list %}
+        <li><a href="/find_cat/{{ ad.id }}/">{{ ad.pet}},{{ad.comment }},{{ad.phone }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+{% endblock %}
